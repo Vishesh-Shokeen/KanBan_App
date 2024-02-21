@@ -1,0 +1,199 @@
+:root {
+  --ff: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --white-900: #ffffff;
+  --black-900: #000000;
+  --black-500: #151414;
+  --acc: rgb(122, 127, 219);
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+html,
+body {
+  min-height: 100vh;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+dialog {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/***********************/
+
+body {
+  font-family: var(--ff);
+  font-weight: var(--fw-400);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+input,
+button {
+  all: unset;
+  cursor: pointer;
+
+  padding: .5rem;
+  border: 1px solid;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: var(--fw-600);
+  color: inherit;
+  transition: border-color 0.25s linear;
+}
+
+
+input:focus{
+  border-color: var(--acc);
+}
+
+button {
+  padding: .2rem .5rem;
+  text-align: center;
+  background-color: var(--acc);
+  color: var(--white-900);
+}
+
+button:hover {
+  background-color: white;
+  color: var(--acc);
+}
+
+
+dialog {
+  width: min(100%, 600px);
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid ;
+}
+
+dialog>div {
+  padding: 1rem;
+  font-weight: var(--fw-600);
+  display: grid;
+  gap: 1rem;
+}
+
+select {
+  border-radius: 10px;
+  padding: .5rem;
+}
+
+/**********************/
+
+#appWrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background-color: var(--white-900);
+  color: var(--black-900);
+
+  display: grid;
+  grid-template-columns: 15rem 1fr 1fr;
+  grid-template-rows: 3rem 1fr;
+}
+
+
+#appWrapper[darkMode=true] {
+  background-color: var(--black-900);
+  color: var(--white-900);
+}
+
+
+#appWrapper[darkMode=true] dialog, #appWrapper[darkMode=true] dialog select {
+  background-color: var(--black-500);
+  color: var(--white-900);
+}
+
+
+#appWrapper>* {
+  padding: 1rem;
+}
+
+
+#appWrapper> :nth-child(1) {
+  grid-column: 1/-1;
+  grid-row: 1;
+  border-bottom: 1px solid var(--black-500);
+
+}
+
+#appWrapper> :nth-child(2) {
+  border-right: 1px solid var(--black-500);
+  grid-column: 1/2;
+  grid-row: 2;
+  transform: translateX(-1000px);
+}
+
+#appWrapper>:nth-child(2)[showBar='true'] {
+  transform: translateX(0px);
+  background-color: inherit;
+}
+
+
+#appWrapper> :nth-child(3) {
+  grid-column: 1/-1;
+  grid-row: 2;
+}
+
+#appWrapper>:nth-child(2)[showBar='true']~* {
+  grid-column: 2/-1;
+}
+
+
+@media (width < 700px) {
+
+  #appWrapper>:nth-child(2) {
+    transform: translateX(-1000px);
+    transition: all 300ms ease-in-out;
+    z-index: 10;
+  }
+
+  #appWrapper>:nth-child(2)[showBar='true'] {
+    transform: translateX(0px);
+    grid-column: 1/-1;
+  }
+
+  #appWrapper>:nth-child(2)[showBar='true']~* {
+    grid-column: 1/-1;
+  }
+
+}
