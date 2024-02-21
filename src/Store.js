@@ -9,8 +9,10 @@ const DB = {
     activeBoard: 'Fitness'
 }
 
-
 const localStorageDB = localStorage.getItem('DB')
+if (!localStorageDB) {
+    localStorage.setItem('DB', JSON.stringify(DB))
+}
 const DB_TO_USE = localStorageDB ? JSON.parse(localStorageDB) : DB
 const store = writable(DB_TO_USE, () => {
     const unSub = store.subscribe(value => {
