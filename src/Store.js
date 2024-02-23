@@ -1,12 +1,84 @@
 import { writable } from "svelte/store";
 
 const DB = {
-    data: {
-        Fitness: {},
-        Work: {
-        }
+    "data": {
+        "PLATFORM LAUNCH": {
+            "TODO": {
+                "Build UI for onboarding flow": {
+                    "desc": "Lorem ipsum",
+                    "subtask": {
+                        "Subtask 01": false,
+                        "Subtask 02": false
+                    },
+                    "column": "TODO",
+                    "taskName": "Build UI for onboarding flow",
+                    "color": "lightgreen"
+                },
+                "Build UI for search": {
+                    "desc": "lorem ipsum dolor isit",
+                    "subtask": {
+                        "Subtask -- 1": false
+                    },
+                    "column": "TODO",
+                    "taskName": "Build UI for search",
+                    "color": "lightpink"
+                },
+                "Build UI for settings": {
+                    "desc": "lorem ipsum dolor isit",
+                    "subtask": {},
+                    "column": "TODO",
+                    "taskName": "Build UI for settings",
+                    "color": ""
+                }
+            },
+            "DOING": {
+                "Design setting and search page": {
+                    "desc": "lorem ipsum dolor isit",
+                    "subtask": {},
+                    "column": "DOING",
+                    "taskName": "Design setting and search page",
+                    "color": "orange"
+                },
+                "Add Search endpoints": {
+                    "desc": "lorem ipsum dolor isit",
+                    "subtask": {},
+                    "column": "DOING",
+                    "taskName": "Add Search endpoints",
+                    "color": "goldenrod"
+                },
+                "Design onboarding flow": {
+                    "desc": "lorem ipsum dolor isit lorem ipsum dolor isit",
+                    "subtask": {},
+                    "column": "DOING",
+                    "taskName": "Design onboarding flow",
+                    "color": "teal"
+                }
+            },
+            "DONE": {
+                "Conduct 5 Wireframe tests": {
+                    "desc": "lorem ipsum dolor isit lorem ipsum dolor isit lorem ipsum dolor isit lorem ipsum dolor isit",
+                    "subtask": {
+                        "Subtask 001": false,
+                        "lorem ipsum dolor isit": false
+                    },
+                    "column": "DONE",
+                    "taskName": "Conduct 5 Wireframe tests",
+                    "color": "gray"
+                },
+                "Market Discovery": {
+                    "desc": "lorem ipsum dolor isitlorem ipsum dolor isitlorem ipsum dolor isit",
+                    "subtask": {
+                        "lorem ipsum dolor isit": false
+                    },
+                    "column": "DONE",
+                    "taskName": "Market Discovery",
+                    "color": ""
+                }
+            }
+        },
+        "ROADMAP": {}
     },
-    activeBoard:''
+    "activeBoard": "PLATFORM LAUNCH"
 }
 
 const localStorageDB = localStorage.getItem('DB')
