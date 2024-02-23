@@ -10,7 +10,7 @@
         taskName: "",
         column: "",
         subtask: [""],
-        color:''
+        color: "",
     };
 
     $: activeBoard = $store.activeBoard;
@@ -49,7 +49,12 @@
         <div class="column">
             <div class="column_head">
                 <span>{column}</span>
-                <img name={column} on:click={deleteColumnFn} src={bin} alt="Delete Column" />
+                <img
+                    name={column}
+                    on:click={deleteColumnFn}
+                    src={bin}
+                    alt="Delete Column"
+                />
             </div>
 
             {#each Object.keys($store.data[activeBoard][column]) as task}
@@ -98,7 +103,7 @@
     .column {
         padding: 0.5rem;
         border-radius: 1rem;
-        border: 1px dashed rgba(181, 176, 176, 0.744);
+        border: 1px dashed rgba(181, 176, 176, 0.844);
     }
 
     .column_head {
@@ -106,7 +111,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0.5rem;
-        border: 1px solid rgba(181, 176, 176, 0.744);
+        border: 1px solid rgba(181, 176, 176, 0.244);
         border-radius: 10px;
     }
 
@@ -116,7 +121,7 @@
     }
 
     .taskWrapper {
-        border: 1px dashed rgba(181, 176, 176, 0.237);
+        border: 1px dashed rgba(181, 176, 176, 0.444);
         border-radius: 10px;
         cursor: pointer;
         margin: 1rem 0.5rem;
@@ -128,6 +133,9 @@
 
     .taskWrapper:hover {
         border-color: var(--acc);
+    }
+    .taskWrapper:focus {
+        outline: none;
     }
 
     .columnDialogBtn {

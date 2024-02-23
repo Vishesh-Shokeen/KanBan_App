@@ -56,9 +56,11 @@ dialog {
 
 
 
+
 /***********************/
 
 body {
+  -webkit-tap-highlight-color: transparent;
   font-family: var(--ff);
   font-weight: var(--fw-400);
   font-size: 16px;
