@@ -14,8 +14,8 @@
     const toggleModeFn = () => {
         const appWrapper = document.querySelector("#appWrapper");
         !appWrapper.getAttribute("darkMode")
-            // @ts-ignore
-            ? appWrapper.setAttribute("darkMode", true)
+            ? // @ts-ignore
+              appWrapper.setAttribute("darkMode", true)
             : appWrapper.removeAttribute("darkMode");
     };
 
@@ -34,10 +34,14 @@
 
     <div class="boardList">
         {#each boardList as board}
-        <div on:click={()=> navigateFn(board)} activeLink={board === $store.activeBoard} class="boardName">
-            <img src={note} alt="Icon" />
-            <li>{board}</li>
-        </div>
+            <div
+                on:click={() => navigateFn(board)}
+                activeLink={board === $store.activeBoard}
+                class="boardName"
+            >
+                <img src={note} alt="Icon" />
+                <li>{board}</li>
+            </div>
         {/each}
     </div>
 
@@ -45,10 +49,12 @@
 
     <div class="toggleModeWrapper">
         <img src={sun} alt="LightMode" />
+
         <label for="modeInput">
             <input on:click={toggleModeFn} type="checkbox" id="modeInput" />
-            <div></div>
+            <div id="toggleFill"></div>
         </label>
+
         <img src={moon} alt="DarkMode" />
     </div>
 
@@ -93,14 +99,13 @@
         font-weight: var(--fw-600);
     }
 
-
-    .boardName[activeLink='true'] {
+    .boardName[activeLink="true"] {
         color: var(--white-900);
         background-color: var(--acc);
         border-radius: 100px 10px 100px 10px;
     }
 
-    .boardName:hover:not([activeLink='true']) {
+    .boardName:hover:not([activeLink="true"]) {
         background-color: rgba(186, 182, 182, 0.302);
         border-radius: 100px 10px 100px 10px;
     }
@@ -110,7 +115,7 @@
         order: -1;
     }
 
-    #navBar>button {
+    #navBar > button {
         margin: 1rem 0;
         padding: 1.5rem;
     }
@@ -118,7 +123,7 @@
     .toggleModeWrapper {
         padding: 1rem;
         border-radius: 5px;
-        background-color: rgb(27, 27, 27);
+        background-color: var(--black-500);
 
         display: flex;
         align-items: center;
@@ -126,37 +131,41 @@
         gap: 1rem;
     }
 
-    .toggleModeWrapper>img {
+    .toggleModeWrapper > img {
         width: 1.2rem;
     }
 
-    .toggleModeWrapper label {
-        width: 4rem;
-        height: 1.5rem;
+    label {
+        display: inline-block;
         border-radius: 1rem;
-        position: relative;
-        background-color: var(--acc);
-        border: 1px solid;
+        border: 1px solid var(--acc);
     }
-
-    .toggleModeWrapper input {
+    input {
         display: none;
     }
 
-    .toggleModeWrapper div {
-        width: .9rem;
-        height: .9rem;
-        border-radius: 50%;
-        background-color: white;
+    #toggleFill {
+        border-radius: 1rem;
+        position: relative;
+        height: 1.5rem;
+        width: 4rem;
+        transition: background-color 0.30s ease;
+    }
+    #toggleFill::after {
+        content: "";
         position: absolute;
-        margin: 5px;
+        background-color: var(--white-900);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 1rem;
+        margin: 6px;
     }
 
-    .toggleModeWrapper label:has(input:checked){
-        background-color: red;
-    }
-
-    input:checked~div {
+    input:checked ~ div::after {
         right: 0;
+    }
+
+    input:checked ~ div {
+        background-color: var(--acc);
     }
 </style>
