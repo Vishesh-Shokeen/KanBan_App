@@ -10,6 +10,8 @@ const DB = {
                         "Subtask 01": false,
                         "Subtask 02": false
                     },
+                    'subTaskDone': 0,
+                    'totalSubtask': 2,
                     "column": "TODO",
                     "taskName": "Build UI for onboarding flow",
                     "color": "lightgreen"
@@ -19,6 +21,8 @@ const DB = {
                     "subtask": {
                         "Subtask -- 1": false
                     },
+                    'subTaskDone': 0,
+                    'totalSubtask': 1,
                     "column": "TODO",
                     "taskName": "Build UI for search",
                     "color": "lightpink"
@@ -26,6 +30,8 @@ const DB = {
                 "Build UI for settings": {
                     "desc": "lorem ipsum dolor isit",
                     "subtask": {},
+                    'subTaskDone': 0,
+                    'totalSubtask': 0,
                     "column": "TODO",
                     "taskName": "Build UI for settings",
                     "color": ""
@@ -35,6 +41,8 @@ const DB = {
                 "Design setting and search page": {
                     "desc": "lorem ipsum dolor isit",
                     "subtask": {},
+                    'subTaskDone': 0,
+                    'totalSubtask': 0,
                     "column": "DOING",
                     "taskName": "Design setting and search page",
                     "color": "orange"
@@ -42,6 +50,8 @@ const DB = {
                 "Add Search endpoints": {
                     "desc": "lorem ipsum dolor isit",
                     "subtask": {},
+                    'subTaskDone': 0,
+                    'totalSubtask': 0,
                     "column": "DOING",
                     "taskName": "Add Search endpoints",
                     "color": "goldenrod"
@@ -49,6 +59,8 @@ const DB = {
                 "Design onboarding flow": {
                     "desc": "lorem ipsum dolor isit lorem ipsum dolor isit",
                     "subtask": {},
+                    'subTaskDone': 0,
+                    'totalSubtask': 0,
                     "column": "DOING",
                     "taskName": "Design onboarding flow",
                     "color": "teal"
@@ -61,6 +73,8 @@ const DB = {
                         "Subtask 001": false,
                         "lorem ipsum dolor isit": false
                     },
+                    'subTaskDone': 0,
+                    'totalSubtask': 2,
                     "column": "DONE",
                     "taskName": "Conduct 5 Wireframe tests",
                     "color": "gray"
@@ -70,6 +84,8 @@ const DB = {
                     "subtask": {
                         "lorem ipsum dolor isit": false
                     },
+                    'subTaskDone': 0,
+                    'totalSubtask': 1,
                     "column": "DONE",
                     "taskName": "Market Discovery",
                     "color": ""

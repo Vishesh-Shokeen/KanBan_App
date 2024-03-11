@@ -127,12 +127,12 @@
     }
 
     .toggleModeWrapper>img {
-        width: 1rem;
+        width: 1.2rem;
     }
 
     .toggleModeWrapper label {
-        width: 50px;
-        height: 20px;
+        width: 4rem;
+        height: 1.5rem;
         border-radius: 1rem;
         position: relative;
         background-color: var(--acc);
@@ -144,12 +144,16 @@
     }
 
     .toggleModeWrapper div {
-        width: 10px;
-        height: 10px;
+        width: .9rem;
+        height: .9rem;
         border-radius: 50%;
         background-color: white;
         position: absolute;
         margin: 5px;
+    }
+
+    .toggleModeWrapper label:has(input:checked){
+        background-color: red;
     }
 
     input:checked~div {

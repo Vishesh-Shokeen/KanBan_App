@@ -3,6 +3,7 @@
     import store from "../Store";
     import bin from "/delete.svg";
     import TaskInfoDialog from "./TaskInfoDialog.svelte";
+    import ProgressBar from "./ProgressBar.svelte";
     /*************************/
 
     let info = {
@@ -10,6 +11,8 @@
         taskName: "",
         column: "",
         subtask: [""],
+        totalSubtask: 0,
+        subTaskDone: 0,
         color: "",
     };
 
@@ -67,6 +70,12 @@
                 >
                     <span>{task}</span>
                     <p>{$store.data[activeBoard][column][task].desc}</p>
+                    <ProgressBar
+                        subTaskDone={$store.data[activeBoard][column][task]
+                            .subTaskDone}
+                        totalSubTask={$store.data[activeBoard][column][task]
+                            .totalSubtask}
+                    />
                 </div>
             {/each}
         </div>
@@ -93,11 +102,6 @@
         overflow: scroll;
         max-height: 92vh;
         max-height: 92dvh;
-    }
-
-    .taskWrapper > span {
-        display: block;
-        margin-bottom: 1rem;
     }
 
     .column {
@@ -129,6 +133,15 @@
 
         transition: border-color 100ms linear;
         overflow-x: hidden;
+    }
+
+    .taskWrapper > span {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 1.025rem;
+    }
+    .taskWrapper > p {
+        font-size: 0.925rem;
     }
 
     .taskWrapper:hover {
