@@ -147,8 +147,8 @@
     #toggleFill {
         border-radius: 1rem;
         position: relative;
-        height: 1.5rem;
-        width: 4rem;
+        height: 30px;
+        width: 80px;
         transition: background-color 0.30s ease;
     }
     #toggleFill::after {
@@ -158,7 +158,7 @@
         width: 1rem;
         height: 1rem;
         border-radius: 1rem;
-        margin: 6px;
+        margin: 4px;
     }
 
     input:checked ~ div::after {

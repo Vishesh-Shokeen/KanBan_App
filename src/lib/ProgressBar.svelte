@@ -2,15 +2,18 @@
     export let subTaskDone = 0;
     export let totalSubTask = 1;
 </script>
+
 <progress value={subTaskDone} max={totalSubTask} id="progressBar"></progress>
 
 <style>
-    progress{
+    progress {
         all: unset;
+        display: inline-flex;
         height: 3px;
-        width: -moz-available;
+
+        width: 100%;
     }
-    ::-moz-progress-bar{
-        background: rgb(13, 255, 0);
+    ::-moz-progress-bar {
+        background: rgb(104, 255, 96);
     }
 </style>
